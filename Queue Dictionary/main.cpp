@@ -8,7 +8,7 @@ using namespace std;
 
 int main(void)
 {
-	dict d;
+	dict dictionary;
 	string w, definition, choice;
 	
 	while(true) 
@@ -25,21 +25,21 @@ int main(void)
 			cout<<"Definition: ";
 			getline(cin, definition);
 			
-			d.insert(w, definition);
+			dictionary.insert(w, definition);
 			cout<<endl;
 			system("CLS");
 		}
 		
 		else if (choice == "2")
 		{
-			if (d.empty())
+			if (dictionary.empty())
 			{
 				cout << "Queue is empty" << endl;
 				sleep(2);
 			}
 			else
 			{
-				d.remove();
+				dictionary.remove();
 			}
 			system("CLS");
 		}
@@ -48,7 +48,7 @@ int main(void)
 		{
 			string cont;
 			
-			if (d.empty())
+			if (dictionary.empty())
 			{
 				cout << "Queue is empty" << endl;
 				sleep(2);
@@ -57,7 +57,7 @@ int main(void)
 			{	
 				while(cont!="c")
 				{
-					d.display();
+					dictionary.display();
 					cout<<"Would you like to continue(c): ";
 					getline(cin, cont);	
 				}
@@ -67,7 +67,7 @@ int main(void)
 		
 		else if (choice == "4")
 		{
-			if (d.empty())
+			if (dictionary.empty())
 			{
 				cout << "Queue is empty" << endl;
 				sleep(2);
@@ -76,7 +76,7 @@ int main(void)
 			{
 				cout<<"Word: ";
 				getline(cin, w);
-				d.update(w);
+				dictionary.update(w);
 				cout<<endl;
 			}
 			system("CLS");
@@ -86,7 +86,7 @@ int main(void)
 		{
 			string cont;
 			
-			if (d.empty())
+			if (dictionary.empty())
 			{
 				cout << "Queue is empty" << endl;
 				sleep(2);
@@ -99,7 +99,7 @@ int main(void)
 				
 				while(cont != "c")
 				{
-					d.search(w);
+					dictionary.search(w);
 					cout<<"Would you like to continue(c): ";
 					getline(cin, cont);
 					cout<<endl;
